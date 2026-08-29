@@ -1,0 +1,3 @@
+sum 12
+names ABC:3
+bad 7

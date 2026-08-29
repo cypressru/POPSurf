@@ -1,0 +1,57 @@
+<html>
+<head><title>Form controls</title></head>
+<body bgcolor="#E8E8EC" text="#1A1A22">
+
+<form action="/search" method="get">
+<table cellpadding="0" cellspacing="0" border="0">
+
+<tr><td>Text&nbsp;</td><td><input type="text" name="q" value="hello" size="16"></td></tr>
+<tr><td>Password&nbsp;</td><td><input type="password" name="pw" value="secret" size="16"></td></tr>
+<tr><td>Empty&nbsp;</td><td><input type="text" name="empty" size="16"></td></tr>
+
+<tr><td>Checkbox&nbsp;</td><td>
+  <input type="checkbox" name="a" value="1" checked> on
+  <input type="checkbox" name="b" value="1"> off
+</td></tr>
+
+<tr><td>Radio&nbsp;</td><td>
+  <input type="radio" name="r" value="x" checked> one
+  <input type="radio" name="r" value="y"> two
+</td></tr>
+
+<tr><td>Select&nbsp;</td><td>
+  <select name="sel">
+    <option value="dc">Dreamcast</option>
+    <option value="xb" selected>Xbox</option>
+    <option value="gc">GameCube</option>
+  </select>
+</td></tr>
+
+<tr><td>Textarea&nbsp;</td><td><textarea name="ta" cols="16" rows="3">multi
+line</textarea></td></tr>
+
+<tr><td>Buttons&nbsp;</td><td>
+  <input type="submit" value="Search">
+  <input type="reset" value="Reset">
+</td></tr>
+
+<tr><td>Disabled&nbsp;</td><td>
+  <input type="text" name="d1" value="no" size="6" disabled>
+  <input type="submit" value="Off" disabled>
+</td></tr>
+
+</table>
+<input type="hidden" name="hid" value="carried">
+</form>
+
+<p>Point at a control and press A.</p>
+
+<table cellpadding="0" cellspacing="0" border="0"><tr>
+<td><img src="t_pot_a.png" width="64" height="64"></td>
+<td><img src="t_pot_b.png" width="64" height="64"></td>
+<td><img src="t_npot_a.png" width="65" height="65"></td>
+<td><img src="t_npot_b.png" width="65" height="65"></td>
+</tr></table>
+
+</body>
+</html>

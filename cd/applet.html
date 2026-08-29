@@ -1,0 +1,105 @@
+<!doctype html>
+<!-- Java applets, running.
+
+     Each <applet> here is a real class file compiled with javac and
+     interpreted by the browser: ps_jclass reads the format, ps_jvm runs the
+     bytecode, and java.awt.Graphics lands in ps_jgfx, which fills an ARGB
+     buffer the PVR uploads as one texture.
+
+     Both spellings are here on purpose. <applet> is the original; <object>
+     with classid="java:..." is what the later authoring tools emitted, and a
+     browser that only knows the first misses a good share of what survives.
+-->
+<html>
+  <head><title>Java applets</title></head>
+  <body bgcolor="#101418" text="#e8e8e8" link="#ffc447" vlink="#c89a2f">
+
+    <table cellspacing="0" cellpadding="8" border="0" width="600">
+      <tr>
+        <td bgcolor="#1c242c" style="height:40px">
+          <font size="5" face="sans"><b>Java applets</b></font>
+        </td>
+      </tr>
+    </table>
+    <br>
+
+    <font size="2" color="#8a949e">&lt;applet code="Chart.class"&gt;</font>
+    <br>
+    <applet code="Chart.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">Field initialisers run in &lt;init&gt; as bytecode, so the
+    bars come from the array the source declares. 536 instructions.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">&lt;object classid="java:Modes.class"&gt;</font>
+    <br>
+    <object classid="java:Modes.class" width="300" height="200"></object>
+    <br>
+    <font size="2">tableswitch, a two-dimensional array, and 64-bit
+    arithmetic. The bar along the bottom is 20! shifted and masked, painted as
+    a colour. 7498 instructions.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">&lt;applet code="Spiro.class"&gt;</font>
+    <br>
+    <applet code="Spiro.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">Math.sin and Math.cos over doubles, fillPolygon over int
+    arrays. 8450 instructions.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">&lt;applet code="Ripple.class"&gt; &mdash; animated</font>
+    <br>
+    <applet code="Ripple.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">start() spawns a Thread; run() loops forever calling
+    repaint() and Thread.sleep(40). The browser runs a slice of it per frame
+    and paints between two of its instructions.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">Three classes: Bounce, Sprite, Trail</font>
+    <br>
+    <applet code="Bounce.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">The browser walks the applet's constant pool, notices the
+    two helper classes, fetches them, and scans those in turn before anything
+    runs.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">Exceptions: throw, catch, unwind</font>
+    <br>
+    <applet code="Catch.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">Six paths, each a tick or a cross. Any cross means an
+    exception did not reach its handler.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">getImage and drawImage</font>
+    <br>
+    <applet code="Pics.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">One image at 1:1, two scaled, and one that does not exist.
+    Images arrive after the first paint and the applet is repainted when they
+    do.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">Mouse events &mdash; click it</font>
+    <br>
+    <applet code="Click.class" width="300" height="200"></applet>
+    <br>
+    <font size="2">Java 1.0's mouseDown. Point at the box and press A; a
+    marker drops where the cursor is and the counter goes up.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">A class that is not there</font>
+    <br>
+    <applet code="Missing.class" width="300" height="90"></applet>
+    <br>
+    <font size="2">A broken applet is a box that says so, never a broken
+    page.</font>
+
+    <br><br>
+    <font size="3"><a href="sites.html">Back to Sites</a></font>
+
+  </body>
+</html>

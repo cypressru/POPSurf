@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Hardware check for ADX streaming.
+
+     The embed is written the way Sonic Adventure's page writes it: zero-sized,
+     AUTOSTART on, so the audio starts with the page and nothing is drawn for
+     it. That markup is the thing being tested as much as the decoder is.
+
+     What to listen for, since the whole point is that a stall and correct
+     playback sound identical with a steady tone:
+
+       - two pitches, one per channel, an octave apart. One pitch only, or
+         both the same, means the stereo pair is crossed or collapsed.
+       - a scale that steps up eight times, once per half second, then
+         restarts. A step landing in the wrong place, or the same step
+         repeating, means a refill was missed or the ring lapped.
+       - twenty seconds without a click or a gap. The ring holds about a
+         second and a half, so a fault in the refill arithmetic shows up as a
+         regular tick roughly that often.
+
+     The console log matters as much as the sound. If ps_voice_pos cannot read
+     the AICA's play cursor it says so and falls back to a wall clock, which
+     drifts - so a run that sounds right but logs the fallback has not
+     actually proved the hardware path. -->
+<html>
+  <head><title>ADX streaming test</title></head>
+  <body bgcolor="#101418" text="#e8e8e8">
+
+    <embed src="test.adx" autostart="true" loop="false" width="0" height="0">
+
+    <table cellspacing="0" cellpadding="8" border="0" width="600">
+      <tr><td bgcolor="#1c242c" style="height:40px">
+        <font size="5" face="sans"><b>ADX streaming test</b></font>
+      </td></tr>
+    </table>
+    <br>
+
+    <table cellspacing="0" cellpadding="6" border="0" width="600">
+      <tr>
+        <td bgcolor="#18202a" width="150" style="height:36px"><font size="2">Track</font></td>
+        <td bgcolor="#141a20"><font size="2">20 s stereo, 22050 Hz, 496 KB</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#18202a" width="150" style="height:36px"><font size="2">Left</font></td>
+        <td bgcolor="#141a20"><font size="2">rising scale from 220 Hz</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#18202a" width="150" style="height:36px"><font size="2">Right</font></td>
+        <td bgcolor="#141a20"><font size="2">the same scale an octave up</font></td>
+      </tr>
+      <tr>
+        <td bgcolor="#18202a" width="150" style="height:36px"><font size="2">Steps</font></td>
+        <td bgcolor="#141a20"><font size="2">eight, one every half second, then repeat</font></td>
+      </tr>
+    </table>
+
+    <br>
+    <font size="2" color="#8a949e">
+      Two pitches, stepping cleanly, no clicks, for twenty seconds. Anything
+      else is a fault - and check the console for the play-cursor fallback.
+    </font>
+
+  </body>
+</html>

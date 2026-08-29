@@ -1,0 +1,40 @@
+build/
+*.o
+*.a
+*.elf
+*.bin
+*.cdi
+*.iso
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+*~
+
+# Intermediate soundbank builds.
+dist/*.psb
+dist/*.psb.p[0-9][0-9]
+
+# Rendered comparison material used when measuring playback against a
+# known-good synth. Large, derived, and only meaningful on the machine doing
+# the measuring.
+dist/reference/
+
+# Host test binaries (no extension, so the *.elf rule misses them).
+tests/layout-host/layouttest
+tests/layout-host/obj/
+tests/swf-host/swfdump
+tests/file-host/filetest
+tests/file-host/fixture/
+cd/test.adx
+
+# Unattended hardware runs (tools/dccheck.sh). The boot arguments are written
+# per run and cleared afterwards; the console can only write back into the
+# directory dcload maps, so its captures land in cd/.shots before being moved
+# out to out/. All three are per-run and none of them belongs on a disc.
+cd/.bootargs
+cd/.shots/
+out/
+
+# Host test binary (no extension, so the *.elf rule misses it).
+tests/adx-host/adxtest

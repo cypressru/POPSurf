@@ -1,0 +1,31 @@
+empty 0 true
+added [b,c,a] 3 false
+at ba
+first/last ba
+contains truefalse
+indexOf 2 -1 -1
+insert [b,x,c,a]
+insert-end [b,x,c,a,y]
+set [b,X,c,a,y]
+remove truefalse [b,c,a,y]
+removeAt [c,a,y]
+elementAt(99) throws
+removeAt(-1) throws
+enum c.a.y.
+nextElement past end throws
+copyInto 3 c
+grown 50 n0 n49 33
+cleared 0 true []
+presized [p,q,r]
+h-empty 0 true
+h-put null null 1
+h-get uno 2 null
+h-size 2 false
+h-has truefalsetrue
+h-value-key uno
+h-keys [one,three,two]
+h-elements [2,3,uno]
+h-remove 2 null 2
+h-keys2 [one,three]
+h-intkey three null
+h-clear 0 true

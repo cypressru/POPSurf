@@ -1,0 +1,61 @@
+empty n 0 len 4 4
+empty bounds java.awt.Rectangle[x=0,y=0,width=0,height=0] contains false
+copy n 4 len 4 x0 0 bounds java.awt.Rectangle[x=0,y=0,width=10,height=10]
+short n 3 len 3 bounds java.awt.Rectangle[x=1,y=1,width=2,height=2]
+zero n 0 len 0 bounds java.awt.Rectangle[x=0,y=0,width=0,height=0]
+grow 1/4 2/4 3/4 4/4 5/8 6/8 7/8 8/8 9/16 10/16
+grown pts [0,0 1,2 2,4 3,6 4,8 5,10 6,12 7,14 8,16 9,18] bounds java.awt.Rectangle[x=0,y=0,width=9,height=18]
+capfrom 1 -> 4
+capfrom 2 -> 4
+capfrom 3 -> 4
+capfrom 4 -> 8
+capfrom 5 -> 8
+capfrom 6 -> 8
+capfrom 7 -> 8
+capfrom 8 -> 16
+capfrom 9 -> 16
+cache1 java.awt.Rectangle[x=0,y=0,width=10,height=10]
+cache2 java.awt.Rectangle[x=0,y=0,width=10,height=10]
+cache3 java.awt.Rectangle[x=-50,y=0,width=60,height=10]
+stale contains before false
+stale contains after false
+stale contains fresh true
+never-asked contains true
+translate [3,-4 13,-4 13,6 3,6] java.awt.Rectangle[x=3,y=-4,width=10,height=10]
+addPoint bounds java.awt.Rectangle[x=0,y=-20,width=40,height=30]
+reset n 0 len 4 bounds java.awt.Rectangle[x=0,y=0,width=0,height=0]
+reset reuse [7,8] len 4 bounds java.awt.Rectangle[x=7,y=8,width=0,height=0]
+hand n 3 bounds java.awt.Rectangle[x=0,y=0,width=10,height=10] contains 9,9 true
+sq 5,5=true 0,0=true 10,10=false 0,5=true 10,5=false 5,0=true 5,10=false -1,5=false 11,5=false 9,9=true 10,0=false 0,10=false
+sq inside true false
+sq point true false
+sq bbox java.awt.Rectangle[x=0,y=0,width=10,height=10]
+notch 5,15=true 20,15=false 20,5=true 20,25=true 15,15=false 29,15=false 31,15=false
+star [50,10 26,82 88,38 12,38 74,82] java.awt.Rectangle[x=12,y=10,width=76,height=72]
+star 50,50=false 50,20=true 50,15=true 20,50=false 50,80=false 50,45=false 0,0=false
+tri 1,1=true 5,5=true 10,10=false 11,11=false 19,0=true 0,19=true 6,3=true
+neg java.awt.Rectangle[x=-10,y=-10,width=8,height=8] true
+one java.awt.Rectangle[x=5,y=5,width=0,height=0] false
+two java.awt.Rectangle[x=5,y=5,width=10,height=20] false
+ctor short: IndexOutOfBounds
+ctor neg: NegativeArraySize
+ctor null: NullPointer
+st empty true size 0
+st push a
+st after 3 false peek c
+st search 1 2 3 -1
+st pop c b size 1
+st vec 2 a d true 1 false
+st insert 3 top d search 3
+st cleared 0 true
+st pop empty: EmptyStack
+st peek empty: EmptyStack
+st dup 1 2
+st churn 0 0 true
+log1 0
+logE 1000000
+log2 693147
+log10 2302585
+loghalf -693147
+logbig 20723
+log0 true

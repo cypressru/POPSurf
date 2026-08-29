@@ -1,0 +1,20 @@
+append [ab1truec2] 9
+appendfp [ab1truec21.5 2.5]
+ctor [seed] 4 s
+capctor [cap] 3
+setLength [abc] 3
+grow 5 99 0 0
+setCharAt [Abcdef]
+reverse [fedcba]
+insert [abcd] [abcd] [ab12]
+delete [abdef]
+chain [chain-6]
+bufobj [obj]
+charAt(9) throws
+copy 12345
+copyoff 23445
+overlap-up 11234
+overlap-down 23455
+copyref abc
+arraycopy(99) throws
+clock true true

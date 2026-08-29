@@ -1,0 +1,84 @@
+<!doctype html>
+<!-- <param>, and the audio surface.
+
+     A separate page from applet.html because these two need the page to say
+     something, and every applet over there deliberately says nothing: the
+     interesting thing here is not the drawing but where the drawing's
+     configuration came from.
+
+     Every parameter below is spelled in a different case from the one the
+     applet asks for. That is not carelessness - it is the test. Pages of the
+     period wrote TEXT, Text and text interchangeably and every browser that
+     ran these applets folded the case, so an applet that reads "text" has to
+     find <param name="TEXT">. Matching exactly leaves it with null, its
+     default, and a banner that runs perfectly while showing the wrong thing.
+-->
+<html>
+  <head><title>Applet parameters</title></head>
+  <body bgcolor="#101418" text="#e8e8e8" link="#ffc447" vlink="#c89a2f">
+
+    <table cellspacing="0" cellpadding="8" border="0" width="600">
+      <tr>
+        <td bgcolor="#1c242c" style="height:40px">
+          <font size="5" face="sans"><b>Applet parameters</b></font>
+        </td>
+      </tr>
+    </table>
+    <br>
+
+    <font size="2" color="#8a949e">&lt;applet code="Scroller.class"&gt; with
+    five &lt;param&gt;</font>
+    <br>
+    <applet code="Scroller.class" width="300" height="200">
+      <param name="TEXT" value="Welcome to my home page!">
+      <param name="textcolor" value="cyan">
+      <param name="BGColor" value="#101830">
+      <param name="speed" value="3">
+      <param name="empty" value="">
+    </applet>
+    <br>
+    <font size="2">Text, both colours and the speed come from the page and
+    none from the class. The banner asks for them as "text", "TEXTCOLOR",
+    "bgcolor" and "Speed", so all four only arrive if the name match folds
+    case. It also asks for "ypos", which the page does not set: that has to
+    come back null, not empty, or the line moves to the top of the box.</font>
+
+    <font size="2">The applet cache is keyed by the class URL, so a second
+    &lt;applet&gt; naming Scroller.class on this page would share this one's
+    slot, its JVM and its parameters rather than being a second instance -
+    which is why there is no side-by-side unconfigured copy here. Delete the
+    five lines above and reload to see what this drew before getParameter
+    existed: every default, and UNCONFIGURED on the summary line.</font>
+
+    <br><br>
+    <font size="2" color="#8a949e">&lt;object classid="java:Chime.class"&gt;
+    &mdash; getAudioClip</font>
+    <br>
+    <object classid="java:Chime.class" width="300" height="200">
+      <param name="code" value="Chime.class">
+      <param name="Sound" value="ding.au">
+    </object>
+    <br>
+    <font size="2">The &lt;object&gt; spelling, where one &lt;param&gt; list
+    carries both the class name and the applet's own configuration: the
+    element takes "code" out of it and the applet is still handed all of it,
+    which is what a real browser does.
+
+    <br><br>
+    Three clips loaded, one of them from a URL that does not
+    exist, a background loop started in start() and a one-shot on every
+    click. <b>There is no sound</b> and there is not meant to be yet: the
+    browser has no decoder for the era's .au, so play(), loop() and stop()
+    record what was asked and log it. What this shows is that an applet which
+    loads audio now runs and draws at all - before AudioClip existed it
+    stopped dead on the class and the box stayed empty. The two base URLs it
+    prints are getCodeBase() and getDocumentBase(), and they are different
+    strings, which is what makes getImage(getDocumentBase(), "x.gif")
+    resolve rather than concatenate.</font>
+
+    <br><br>
+    <font size="2"><a href="applet.html">Back to the applet page</a></font>
+    <br><br>
+
+  </body>
+</html>

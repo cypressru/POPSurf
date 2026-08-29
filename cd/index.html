@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>POPSurf</title>
+<style>
+  body {
+    background: #101018;
+    color: #e0e0e8;
+    font-size: 16px;
+    margin: 16px;
+  }
+  h1 {
+    color: #ffd25a;
+    font-size: 28px;
+    border-bottom: 2px solid #ffd25a;
+    margin-bottom: 8px;
+  }
+  h2 { color: #8ab4ff; font-size: 20px; margin-top: 16px; }
+  p  { margin: 8px 0; }
+  .card {
+    background: #1c1c28;
+    border: 1px solid #3a3a50;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  .tag { background: #2a4a2a; color: #9fe89f; padding: 2px; }
+  ul { margin: 8px 0 8px 24px; }
+  li { margin: 3px 0; }
+  table { border: 1px solid #3a3a50; margin-top: 8px; }
+  td { border: 1px solid #3a3a50; padding: 4px; }
+  th { border: 1px solid #3a3a50; padding: 4px; color: #ffd25a; }
+</style>
+</head>
+<body>
+  <h1>POPSurf</h1>
+  <p>Rendering on a Dreamcast through litehtml and the PVR.</p>
+
+  <div class="card">
+    <h2>Cascade check</h2>
+    <p>This box exercises <span class="tag">class selectors</span>,
+       background colours, borders and padding.</p>
+  </div>
+
+  <h2>Block and inline layout</h2>
+  <ul>
+    <li>Text wrapping across the 640 pixel viewport, which needs the line
+        breaker to split this sentence over several lines.</li>
+    <li>List markers and indentation.</li>
+    <li>Nested inline runs with <span class="tag">their own colours</span>.</li>
+  </ul>
+
+  <h2>Tables</h2>
+  <table>
+    <tr><th>Format</th><th>Support</th><th>Path</th></tr>
+    <tr><td>GIF</td><td>animated</td><td>texture cache</td></tr>
+    <tr><td>MIDI</td><td>General MIDI</td><td>AICA</td></tr>
+  </table>
+
+  <p>Press START to exit. D-pad up and down scrolls.</p>
+</body>
+</html>

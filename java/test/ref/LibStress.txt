@@ -1,0 +1,12 @@
+size 2000
+head item-0-0 item-1-7
+tail item-1998-13986 item-1999-13993
+intact 0
+find 1234 true false
+after-remove 1000 item-1000-7000
+h-size 400 v1197 v0
+h-intact 0
+h-enum 400
+tok 300 44850
+rand 500 487 855
+done 0 0

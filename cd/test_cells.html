@@ -1,0 +1,45 @@
+<!doctype html>
+<!-- Visual check for CSS height on table cells.
+
+     Each band states the height it asked for. Before the fix every one of
+     them collapsed to a single line of text regardless of what it asked for,
+     so the whole page was a stack of identical thin strips. -->
+<html>
+  <head><title>Table cell heights</title></head>
+  <body bgcolor="#202020" text="#ffffff">
+    <font face="sans" size="4">Table cell heights</font>
+    <br><br>
+
+    <table cellspacing="0" cellpadding="4" border="0" width="600">
+      <tr>
+        <td bgcolor="#c04040" style="height:16px">16px</td>
+      </tr>
+    </table>
+    <br>
+    <table cellspacing="0" cellpadding="4" border="0" width="600">
+      <tr>
+        <td bgcolor="#40c040" style="height:48px">48px</td>
+      </tr>
+    </table>
+    <br>
+    <table cellspacing="0" cellpadding="4" border="0" width="600">
+      <tr>
+        <td bgcolor="#4040c0" style="height:96px">96px</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- Side by side, so the row takes the tallest cell and both stretch. -->
+    <table cellspacing="0" cellpadding="4" border="0" width="600">
+      <tr>
+        <td bgcolor="#c0a040" style="height:64px" width="300">64px</td>
+        <td bgcolor="#8040c0" width="300">no height, stretched to match</td>
+      </tr>
+    </table>
+    <br>
+
+    <!-- The control: height on a div always worked, so these two blocks
+         should now be the same height as each other. -->
+    <div style="background-color:#408080; height:64px; width:600px">div, 64px</div>
+  </body>
+</html>

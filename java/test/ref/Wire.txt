@@ -1,0 +1,37 @@
+ok   fresh Panel has a FlowLayout
+ok   and it is the same one every time
+ok   FlowLayout's default gaps are 5
+ok   a bare Container has no layout
+ok   getLayout gives back what setLayout was given
+ok   setConstraints copies what it was given
+ok   and copies the insets with it
+ok   the last component kept its own
+ok   getConstraints is a copy, not the entry
+ok   and a fresh one each time
+ok   a component with no constraints gets the defaults
+ok   TextField kept the font it was given
+ok   Checkbox kept its own
+ok   Button kept its own
+ok   and setting it again replaces it
+ok   without moving anybody else's
+ok   a widget can be measured
+ok   through the Component spelling
+ok   an unplaced widget has no size
+ok   setBounds round-trips through getSize
+ok   and through getBounds
+ok   and through getLocation
+ok   resize is setSize's other spelling
+ok   no listener fired without an event
+ok   TextComponent.getText reaches the TextField
+ok   a fresh group has nothing selected
+ok   an unset member does not select itself
+ok   a set member selects itself
+ok   and the next one switches it off
+ok   setSelectedCheckbox moves the selection
+ok   the selected box cannot switch itself off
+ok   setState(true) on a member selects it
+ok   selecting null switches off the one that was on
+ok   getCheckboxGroup
+ok   and null for a box in no group
+ok   layout and constraints survive collections
+wire: all ok

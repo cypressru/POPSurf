@@ -1,0 +1,47 @@
+<!doctype html>
+<!-- Regression cover for hoisting the height calculation out of the
+     width-only table-cell guard in render_item.cpp.
+
+     The risk of that change is that cells now receive a computed height where
+     before they always saw auto, so these check the neighbouring cases still
+     behave: widths still come from the column algorithm rather than from a
+     cell's own width property, a cell without a stated height still sizes to
+     content, and the height interacts correctly with rows, spans and limits.
+
+     Expected, with the probe container's 16px line and 8px glyphs:
+       t1  columns share width by content: 16 and 32, both cells 16 tall
+       t2  a stated cell width feeds the column algorithm: 200 and 32
+       t3  tallest cell sets the row: both cells 40
+       t4  min-height wins over a smaller stated height: 48
+       t5  max-height caps a larger stated height: 24
+       t6  rowspan cell 60 tall, rows below it 16 and 44 - summing to 60,
+           not doubled
+-->
+<html>
+  <body style="margin:0">
+    <table id="t1" cellspacing="0" cellpadding="0" border="0">
+      <tr><td>ab</td><td>cdef</td></tr>
+    </table>
+
+    <table id="t2" cellspacing="0" cellpadding="0" border="0">
+      <tr><td style="width:200px">ab</td><td>cdef</td></tr>
+    </table>
+
+    <table id="t3" cellspacing="0" cellpadding="0" border="0">
+      <tr><td style="height:40px">a</td><td>b</td></tr>
+    </table>
+
+    <table id="t4" cellspacing="0" cellpadding="0" border="0">
+      <tr><td style="height:16px;min-height:48px">a</td></tr>
+    </table>
+
+    <table id="t5" cellspacing="0" cellpadding="0" border="0">
+      <tr><td style="height:64px;max-height:24px">a</td></tr>
+    </table>
+
+    <table id="t6" cellspacing="0" cellpadding="0" border="0">
+      <tr><td rowspan="2" style="height:60px">a</td><td>b</td></tr>
+      <tr><td>c</td></tr>
+    </table>
+  </body>
+</html>

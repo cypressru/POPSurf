@@ -1,0 +1,41 @@
+limits -2147483648 2147483647
+limitsL -9223372036854775808 9223372036854775807
+limitsC 0 65535
+parseInt [0] = 0
+parseInt [42] = 42
+parseInt [-42] = -42
+parseInt [+42] = 42
+parseInt [2147483647] = 2147483647
+parseInt [-2147483648] = -2147483648
+parseInt [2147483648] throws
+parseInt [] throws
+parseInt [   7] throws
+parseInt [7 ] throws
+parseInt [7.0] throws
+parseInt [abc] throws
+parseInt [-] throws
+parseInt [0x10] throws
+radix 255 -5 35
+parseInt(2,2) throws
+toString 255 ff -ff 0
+hex ff ffffffff 10 101
+box 7 7.0 7 7.0
+boxstr 7 9 11
+boxeq truefalse
+boxhash 7
+longparse 9007199254740993 -5 ff
+parseLong throws
+dparse 1.5 -2000.0 7.0
+parseDouble throws
+parseDouble empty throws
+dbox 2.5 2 2.5 0.25
+fparse 1.5 0.5 2
+bool true true false true
+boolconst truefalse
+digit truefalsetruefalsefalse
+space truetruetruefalse
+ulcase AZ7q
+chcase truefalse
+digitval 15 9 -1 b
+cbox k k m
+mathish 3 9

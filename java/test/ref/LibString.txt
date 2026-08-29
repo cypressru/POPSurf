@@ -1,0 +1,44 @@
+length 12
+charAt Hod
+sub1 [World]
+sub2 [Hello]
+sub-empty []
+sub-all [Hello, World]
+sub-end []
+sub(-1) throws
+sub(99) throws
+sub(4,2) throws
+sub(0,99) throws
+charAt(99) throws
+idxc 4 8 -1
+lidxc 8 4 -1
+idxs 7 4 -1 0
+idxs2 8 4 12
+lidxs 8 -1 10 12
+eq truefalsefalse
+eqic truefalse
+cmp 0 7 -18 -1
+cmpic 0
+trim [pad me] [] []
+case HELLO, WORLD hello, world
+starts truefalsetruetrue
+ends truefalsetrue
+replace [HeLLo, WorLd] [Hello, World]
+concat [Hello, World!!] [Hello, World]
+chars 12 Hd
+fromchars [Hello, World] [World]
+valueOfChars [Hello, World]
+hash -505841268 0 97
+vi 42 -42 -2147483648
+vj 123456789012345 -9223372036854775808
+vz true false
+vc q
+vo obj
+d 1.0 0.5 -0.0 100.0
+d 0.3333333333333333 1.0E7 9999999.0
+d 0.001 1.0E-4 1.0E20
+d Infinity -Infinity NaN
+f 1.0 0.5 0.33333334 1.0E10
+plus 1.5 2.0 x 7 true
+intern true
+empty 0 true false

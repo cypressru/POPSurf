@@ -1,0 +1,17 @@
+<!doctype html>
+<!-- The td asks for 64px and lays out at content height instead.
+
+     Three cases, so the failure can be told apart from the general case:
+     the plain cell establishes what "content height" looks like, the styled
+     cell is the bug, and the div proves height works fine outside a table. -->
+<html>
+  <body style="margin:0">
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr><td id="plain">x</td></tr>
+    </table>
+    <table cellspacing="0" cellpadding="0" border="0">
+      <tr><td id="tall" style="height:64px">x</td></tr>
+    </table>
+    <div id="control" style="height:64px">x</div>
+  </body>
+</html>
